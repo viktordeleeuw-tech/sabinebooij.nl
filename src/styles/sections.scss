@@ -84,6 +84,16 @@
   .cta-link {
     padding: 0.65rem 1.6rem;
     font-size: 0.9rem;
+    background: $accent;
+    color: $white;
+    border-radius: $radius-sm;
+    font-weight: 600;
+    transition: $transition;
+
+    &:hover {
+      background: $accent-dark;
+      transform: translateY(-2px);
+    }
   }
 
   .mobile-toggle {
@@ -126,7 +136,7 @@
 
   @include respond-to('sm') {
     min-height: 60vh;
-    padding: $space-lg 0;
+    padding: 4rem 0;
   }
 
   .hero-background {
@@ -195,13 +205,27 @@
     z-index: 2;
     flex: 1;
 
+    .logo-full {
+      width:80%;
+      max-width: 300px;
+    margin:0 auto 1rem auto;
+     
+      img {
+        width: 100%;
+      }
+    }
+    @include respond-to('sm') {
+    .logo-full {
+        // margin: 1rem;
+      }
+       }
     @include respond-to('lg') {
       flex: 1;
     }
   }
 
   .hero-badge {
-    display: inline-block;
+    display:none;
     background: rgba(201, 165, 75, 0.1);
     color: $accent-light;
     padding: 0.6rem 1.5rem;
@@ -216,11 +240,13 @@
 
   .hero-h1 {
     color: $white;
+    // font-family: $font-serif;
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     line-height: 1.1;
     margin-bottom: $space-md;
-    font-weight: 800;
+    font-weight: 500;
     letter-spacing: -0.8px;
+    text-align: center;
   }
 
   .hero-subtitle {
@@ -245,25 +271,29 @@
   }
 
   .hero-stat {
-    text-align: left;
+    text-align: center;
     flex: 1 1 auto;
     min-width: 120px;
   }
 
   .stat-value {
-    font-family: $font-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: $accent-light;
+    font-family: $font-sans;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: $accent;
     line-height: 1;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.8px;
+
+    @include respond-to('md') {
+      font-size: 3.2rem;
+    }
   }
 
   .stat-label {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 0.5rem;
-    font-weight: 500;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.75rem;
+    font-weight: 600;
     display: block;
   }
 
@@ -305,7 +335,7 @@
     position: relative;
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 3 / 3;
     border-radius: $radius-lg;
     overflow: hidden;
     @include shadow-hero;

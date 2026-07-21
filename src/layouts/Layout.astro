@@ -1,0 +1,82 @@
+---
+import '../styles/global.scss';
+import '../styles/sections.scss';
+import '../styles/components.scss';
+import '../styles/index.scss';
+import '../styles/pages.scss';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Remove debug attributes
+      document.querySelectorAll('[data-astro-source-file]').forEach((el) => {
+        el.removeAttribute('data-astro-source-file');
+        el.removeAttribute('data-astro-source-loc');
+      });
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href.startsWith('#') && href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      // Navbar scroll effect
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.12)';
+        } else {
+          navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
+        }
+      });
+
+      // Form handling
+      const contactForm = document.querySelector('.contact-form form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('name').value;
+          alert(`Bedankt ${name}! Ik neem spoedig contact met u op.`);
+          this.reset();
+        });
+      }
+    </script>
+  </body>
+</html>

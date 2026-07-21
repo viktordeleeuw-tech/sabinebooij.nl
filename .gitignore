@@ -1,0 +1,41 @@
+# .gitignore for Astro
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.astro/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+*.css
+*.css.map
+src/styles/*.css
+src/styles/*.css.map
+
+# Tool-specific
+.claude-flow/
+.impeccable/
+.claude/
+.vercel/
+.vercel

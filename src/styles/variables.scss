@@ -1,0 +1,41 @@
+// Colors
+$primary: #0f2844;
+$primary-light: #1a3f5c;
+$primary-dark: #051425;
+$accent: #c7794c;
+$accent-light: #c7794c;
+$accent-dark: #7a5f14;
+$text: #1f1f1f;
+$text-light: #5a5a5a;
+$light: #f9f7f4;
+$light-bg: #f5f1ed;
+$border: #e5dcd3;
+$white: #ffffff;
+
+// Fonts
+$font-serif: 'Playfair Display', serif;
+$font-sans: 'Inter', sans-serif;
+
+// Spacing
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2rem;
+$space-xl: 2.5rem;
+$space-2xl: 3rem;
+$space-3xl: 4rem;
+
+// Breakpoints (mobile-first)
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1200px;
+
+// Border radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+
+// Transitions
+$transition: all 0.3s ease;
+$transition-slow: all 0.4s ease;

@@ -1,0 +1,698 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Section Label & Title Base Styles
+.section-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $accent;
+  // margin-bottom: $space-sm;
+  font-weight: 600;
+}
+
+.section-title {
+  margin: 0;
+  // margin-bottom: $space-sm;
+  font-size: clamp(1.75rem, 5vw, 2.2rem);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+// Trust Logos
+.trust-logos {
+  background: linear-gradient(180deg, $light-bg 0%, $white 100%);
+  padding: $space-2xl 0;
+  border-bottom: 1px solid $border;
+
+  h3 {
+    margin-bottom: $space-lg;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $text-light;
+  }
+
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: $space-md;
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(8, 1fr);
+      gap: $space-sm;
+    }
+  }
+
+  .logo-badge {
+    background: $white;
+    padding: $space-sm $space-md;
+    border: 1px solid $border;
+    border-radius: $radius-sm;
+    text-align: center;
+    font-weight: 600;
+    color: $text-light;
+    font-size: 0.9rem;
+    @include shadow-sm;
+    transition: $transition;
+    white-space: nowrap;
+
+    &:hover {
+      transform: translateY(-2px);
+      @include shadow-md;
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+}
+
+// Why Sabine
+.why-sabine {
+  padding: $space-3xl $space-lg;
+  background: $light-bg;
+
+  &__label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $accent;
+    margin-bottom: $space-md;
+    font-weight: 600;
+  }
+
+  .why-sabine__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-3xl;
+    align-items: start;
+
+    @include respond-to('md') {
+      grid-template-columns: 1fr 1.2fr;
+    }
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .proof-points {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .proof-item {
+    display: flex;
+    gap: $space-sm;
+    align-items: flex-start;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: left;
+
+    p {
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+
+  .proof-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    background: $accent;
+    color: $white;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+}
+
+// Expertise
+.expertise {
+  padding: $space-3xl 0;
+  background: linear-gradient(180deg, $white 0%, $light-bg 100%);
+
+  .section-label {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+    margin-top: $space-lg;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .expertise-card {
+    background: $light-bg;
+    padding: $space-lg;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+    transition: $transition;
+    @include shadow-sm;
+
+    &:hover {
+      @include shadow-lg;
+      transform: translateY(-2px);
+    }
+
+    h4 {
+      margin-bottom: $space-md;
+      font-size: 1.05rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+}
+
+// Process
+.process {
+  padding: $space-3xl $space-lg;
+  background: $primary;
+  color: $white;
+
+  .process__header {
+    text-align: center;
+    margin-bottom: $space-3xl;
+  }
+
+  .section-label {
+    color: $accent;
+  }
+
+  h2 {
+    color: $white;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .process-item {
+    padding: $space-lg;
+    text-align: left;
+    border-left: 1px solid rgba($white, 0.15);
+
+    h4 {
+      font-family: $font-serif;
+      font-size: 1.2rem;
+      color: $white;
+      margin-bottom: $space-md;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: rgba($white, 0.85);
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 300;
+    }
+  }
+
+  .process-num {
+    font-family: $font-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $accent;
+    margin-bottom: $space-md;
+    display: block;
+  }
+}
+
+// Cases
+.cases {
+  padding: $space-3xl 0;
+  background: linear-gradient(180deg, $white 0%, $light-bg 100%);
+
+  .section-label {
+    text-align: center;
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+    margin-top: $space-lg;
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .case-item {
+    background: $white;
+    padding: $space-lg;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+    transition: $transition;
+    @include shadow-sm;
+
+    &:hover {
+      @include shadow-lg;
+      transform: translateY(-2px);
+    }
+
+    h4 {
+      margin-bottom: $space-md;
+      font-size: 1.2rem;
+    }
+  }
+
+  .case-label {
+    display: inline-block;
+    background: $accent;
+    color: $white;
+    padding: 0.4rem $space-sm;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: $space-md;
+  }
+
+  .case-flow {
+    p {
+      margin-bottom: $space-sm;
+      font-size: 0.95rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      strong {
+        color: $primary;
+      }
+    }
+  }
+}
+
+// Branches
+.branches {
+  padding: $space-3xl 0;
+  background: $white;
+
+  .section-label {
+    text-align: center;
+  }
+
+  .branches-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+    margin-top: $space-lg;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .branch-card {
+    @include gradient-primary;
+    color: $white;
+    padding: $space-lg;
+    border-radius: $radius-md;
+    transition: $transition;
+    @include shadow-md;
+
+    &:hover {
+      transform: translateY(-2px);
+      @include shadow-lg;
+    }
+
+    h4 {
+      color: $accent;
+      margin-bottom: $space-md;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+}
+
+// Collaborate
+.collaborate {
+  padding: $space-3xl 0;
+  background: linear-gradient(180deg, $white 0%, $light-bg 100%);
+
+  .section-label {
+    text-align: center;
+  }
+  .collab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+    margin-bottom: $space-lg;
+    margin-top: $space-lg;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .collab-card {
+    background: $white;
+    padding: $space-lg;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+    text-align: center;
+    transition: $transition;
+    @include shadow-sm;
+
+    &:hover {
+      @include shadow-lg;
+      transform: translateY(-2px);
+    }
+
+    .collab-icon {
+      font-size: 2rem;
+      margin-bottom: $space-md;
+    }
+
+    h4 {
+      margin-bottom: $space-md;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+
+  .collaborate-note {
+    @include gradient-primary;
+    color: $white;
+    padding: $space-xl;
+    border-radius: $radius-md;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    @include shadow-md;
+
+    p {
+      color: rgba(255, 255, 255, 0.95);
+      margin: 0;
+    }
+
+    strong {
+      color: $accent-light;
+    }
+  }
+}
+
+// About
+.about {
+  padding: $space-3xl 0;
+  background: $white;
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2xl;
+    align-items: flex-start;
+
+    @include respond-to('lg') {
+      flex-direction: row;
+      gap: $space-3xl;
+    }
+  }
+
+  .about-image {
+    width: 100%;
+    flex: 1;
+
+    @include respond-to('lg') {
+      width: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: $radius-md;
+      @include shadow-md;
+    }
+  }
+
+  .about-content {
+    flex: 1;
+
+    h2 {
+      text-align: left;
+      margin-bottom: $space-lg;
+    }
+
+    h3 {
+      text-align: left;
+      font-size: 1.3rem;
+      margin-top: $space-lg;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: $text;
+      margin-bottom: $space-lg;
+    }
+
+    p {
+      margin-bottom: $space-lg;
+    }
+  }
+}
+
+// CTA Final
+.cta-final {
+  @include gradient-primary;
+  color: $white;
+  padding: $space-3xl 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  h2 {
+    color: $white;
+    margin-bottom: $space-md;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.15rem;
+    margin-bottom: $space-lg;
+  }
+}
+
+// Contact
+.contact {
+  padding: $space-3xl 0;
+  background: linear-gradient(180deg, $white 0%, $light-bg 100%);
+
+  .section-label {
+    margin-bottom: $space-lg;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2xl;
+
+    @include respond-to('lg') {
+      flex-direction: row;
+      gap: $space-3xl;
+    }
+  }
+
+  .contact-direct,
+  .contact-form {
+    flex: 1;
+  }
+
+  .contact-item {
+    margin-bottom: $space-lg;
+
+    strong {
+      display: block;
+      color: $primary;
+      margin-bottom: $space-sm;
+      font-size: 0.95rem;
+    }
+
+    a {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+  }
+
+  .form-group {
+    margin-bottom: $space-md;
+
+    label {
+      display: block;
+      margin-bottom: $space-sm;
+      font-weight: 600;
+      color: $primary;
+      font-size: 0.95rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.9rem;
+      border: 2px solid $border;
+      border-radius: $radius-sm;
+      font-family: $font-sans;
+      font-size: 0.95rem;
+      transition: $transition;
+      background: $white;
+
+      &:focus {
+        outline: none;
+        border-color: $accent;
+        box-shadow: 0 0 0 3px rgba(157, 125, 26, 0.1);
+        background: rgba(157, 125, 26, 0.02);
+      }
+
+      &::placeholder {
+        color: $text-light;
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  @include gradient-primary;
+  color: $white;
+  padding: $space-2xl 0 $space-lg;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+    margin-bottom: $space-lg;
+    padding-bottom: $space-lg;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-lg;
+    }
+
+    h5 {
+      color: $accent-light;
+      margin-bottom: $space-md;
+      font-family: $font-serif;
+      font-size: 1rem;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 0.6rem;
+      }
+
+      a {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.9rem;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+  }
+}
+
+// Responsive refinements
+@media (max-width: 768px) {
+  .collaborate .collab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .process .process-steps {
+    gap: $space-sm;
+  }
+
+  .collab-card .collab-icon {
+    font-size: 1.8rem;
+    margin-bottom: $space-sm;
+  }
+}

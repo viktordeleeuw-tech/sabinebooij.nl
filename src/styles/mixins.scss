@@ -1,0 +1,93 @@
+@use './variables' as *;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-clamp($min, $max) {
+  font-size: clamp($min, 2vw, $max);
+}
+
+@mixin shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+@mixin shadow-md {
+  box-shadow: 0 2px 6px rgba(157, 125, 26, 0.12);
+}
+
+@mixin shadow-lg {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+@mixin shadow-hero {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+// Refined gradients - softer transition
+@mixin gradient-copper {
+  background: linear-gradient(135deg, #9d7d1a 0%, #aa8d2a 100%);
+}
+
+@mixin gradient-copper-dark {
+  background: linear-gradient(135deg, #8b6f16 0%, #9d7d1a 100%);
+}
+
+@mixin gradient-primary {
+  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  border-radius: $radius-sm;
+  font-weight: 600;
+  transition: $transition;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.35px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@mixin hover-lift {
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (min-width: $bp-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: $bp-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: $bp-lg) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: $bp-xl) {
+      @content;
+    }
+  }
+}

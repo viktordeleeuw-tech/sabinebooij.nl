@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LowHero from '../components/LowHero.astro';
+---
+
+<Layout title="Contact | Sabine Booij" description="Neem contact op">
+  <LowHero title="Contact" subtitle="Laten we bespreken hoe ik uw organisatie kan helpen" />
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-direct">
+          <h3>Direct contact</h3>
+          <div class="contact-item">
+            <strong>E-mail</strong>
+            <a href="mailto:info@sabinnovation.nl">info@sabinnovation.nl</a>
+          </div>
+          <div class="contact-item">
+            <strong>Telefoon</strong>
+            <a href="tel:+31622337262">+31 6 223 37 262</a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Stuur een bericht</h3>
+          <form>
+            <div class="form-group">
+              <label for="name">Uw naam *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mailadres *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="organization">Organisatie *</label>
+              <input type="text" id="organization" name="organization" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Beschrijf uw uitdaging *</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary-large">Verstuur</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+

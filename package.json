@@ -1,0 +1,17 @@
+{
+  "name": "sabine-booij",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Premium website for Sabine Booij - Communication & Behavior Specialist",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

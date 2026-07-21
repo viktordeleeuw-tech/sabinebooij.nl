@@ -1,0 +1,41 @@
+---
+---
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/"><img src="/public/images/logo.png"></a>
+    </div>
+    <button class="mobile-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">Over Sabine</a></li>
+      <li><a href="/expertise">Expertise</a></li>
+      <li><a href="/branches">Branches</a></li>
+      <li><a href="/werkwijze">Werkwijze</a></li>
+      <li><a href="/cases">Cases</a></li>
+      <li><a href="/samenwerken">Samenwerken</a></li>
+      <li><a href="/contact" class="cta-link">Plan een kennismaking</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const menu = document.getElementById('navMenu');
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('active');
+  });
+
+  // Close menu on link click
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('active');
+    });
+  });
+</script>

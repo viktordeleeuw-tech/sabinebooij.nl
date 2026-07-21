@@ -35,7 +35,7 @@ main {
 .container {
   max-width: $bp-xl;
   margin: 0 auto;
-  padding: 0 $space-lg;
+  padding: 0 $space-sm;
 
   @include respond-to('sm') {
     padding: 0 $space-md;

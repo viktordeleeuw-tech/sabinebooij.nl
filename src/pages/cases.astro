@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LowHero from '../components/LowHero.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Cases' }
+];
 ---
 
 <Layout title="Cases | Sabine Booij" description="Praktijkvoorbeelden en casestudy's">
-  <LowHero title="Cases & Praktijkvoorbeelden" subtitle="Concrete resultaten uit het veld" />
+  <LowHero title="Cases & Praktijkvoorbeelden" subtitle="Concrete resultaten uit het veld" breadcrumbs={breadcrumbs} />
 
   <section class="cases-content">
     <div class="container">

@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LowHero from '../components/LowHero.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Over Sabine' }
+];
 ---
 
 <Layout title="Over Sabine | Sabine Booij" description="Leer meer over Sabine Booij, specialist in communicatie, gedrag en training">
-  <LowHero title="Over Sabine Booij" subtitle="12+ jaar expertise in communicatie onder druk" />
+  <LowHero title="Over Sabine Booij" subtitle="12+ jaar expertise in communicatie onder druk" breadcrumbs={breadcrumbs} />
 
   <section class="about-content">
     <div class="container">

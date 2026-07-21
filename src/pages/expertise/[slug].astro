@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LowHero from '../../components/LowHero.astro';
+
+export async function getStaticPaths() {
+  const expertise = [
+    { slug: 'communicatie-onder-druk', title: 'Communicatie onder druk', subtitle: 'Professionals die effectief communiceren wanneer het moeilijk is.' },
+    { slug: 'de-escalatie-conflicthantering', title: 'De-escalatie & conflicthantering', subtitle: 'Van escalatie naar verbinding door gerichte communicatie.' },
+    { slug: 'crisiscommunicatie', title: 'Crisiscommunicatie', subtitle: 'Handelen en besluitvorming in crisissituaties.' },
+    { slug: 'leiderschap-feedback', title: 'Leiderschap & feedback', subtitle: 'Sterk leiderschap en moeilijke gesprekken voeren.' },
+    { slug: 'gedragsanalyse', title: 'Gedragsanalyse', subtitle: 'Menselijk gedrag begrijpen en beïnvloeden.' },
+    { slug: 'teamontwikkeling', title: 'Teamontwikkeling', subtitle: 'Teams sterker en effectiever laten samenwerken.' },
+    { slug: 'omgaan-met-agressie', title: 'Omgaan met agressie', subtitle: 'Hantering van agressief en grensoverschrijdend gedrag.' },
+    { slug: 'hoog-risico-incidenten', title: 'Hoog-Risico incidenten', subtitle: 'Extreem geweld, terrorisme, gijzelingen, interventies.' },
+    { slug: 'meldkamertrainingen', title: 'Meldkamertrainingen', subtitle: 'Specialistische training voor meldkamer-professionals.' },
+    { slug: 'heat-training', title: 'HEAT-Training', subtitle: 'Operationele trainingen voor hoog-risico situaties.' },
+    { slug: 'praktijkexamens-assessments', title: 'Praktijkexamens & assessments', subtitle: 'Beoordeling van professionals en trainingsacteur.' },
+    { slug: 'advies-scenario-ontwikkeling', title: 'Advies & scenario-ontwikkeling', subtitle: 'Maatwerk trainingen en leertrajecten ontwerpen.' },
+  ];
+
+  return expertise.map(item => ({
+    params: { slug: item.slug },
+    props: { item }
+  }));
+}
+
+const { item } = Astro.props;
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Expertise', href: '/#expertise' },
+  { label: item.title }
+];
+---
+
+<Layout title={`${item.title} | Sabine Booij`} description={item.subtitle}>
+  <LowHero title={item.title} subtitle={item.subtitle} breadcrumbs={breadcrumbs} />
+
+  <section class="expertise-detail">
+    <div class="container">
+      <p>Meer informatie over {item.title} volgt binnenkort.</p>
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+  @use '../../styles/variables' as *;
+
+  .expertise-detail {
+    padding: $space-3xl 0;
+
+    p {
+      font-size: 1.1rem;
+      color: $text;
+      line-height: 1.8;
+    }
+  }
+</style>

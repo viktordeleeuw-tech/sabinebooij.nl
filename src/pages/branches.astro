@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LowHero from '../components/LowHero.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Branches' }
+];
 ---
 
 <Layout title="Branches | Sabine Booij" description="Sectoren waarin ik werkzaam ben">
-  <LowHero title="Branches & Sectoren" subtitle="Ik werk met organisaties uit diverse sectoren" />
+  <LowHero title="Branches & Sectoren" subtitle="Ik werk met organisaties uit diverse sectoren" breadcrumbs={breadcrumbs} />
 
   <section class="branches-content">
     <div class="container">

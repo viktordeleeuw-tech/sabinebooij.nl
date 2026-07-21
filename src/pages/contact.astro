@@ -1,28 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LowHero from '../components/LowHero.astro';
+
+const breadcrumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact' }
+];
 ---
 
 <Layout title="Contact | Sabine Booij" description="Neem contact op">
-  <LowHero title="Contact" subtitle="Laten we bespreken hoe ik uw organisatie kan helpen" />
+  <LowHero title="Contact" subtitle="Laten we bespreken hoe ik uw organisatie kan helpen" breadcrumbs={breadcrumbs} />
 
-  <section class="contact-content">
+  <section class="contact-intro">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-direct">
-          <h3>Direct contact</h3>
-          <div class="contact-item">
-            <strong>E-mail</strong>
+      <div class="intro-content">
+        <p class="intro-lead">Heeft uw organisatie een uitdaging op het terrein van communicatie, gedrag of training onder druk? Laten we samen bespreken hoe ik u kan helpen.</p>
+        <div class="contact-quick">
+          <div class="quick-item">
+            <h4>📧 E-mail</h4>
             <a href="mailto:info@sabinnovation.nl">info@sabinnovation.nl</a>
           </div>
-          <div class="contact-item">
-            <strong>Telefoon</strong>
+          <div class="quick-item">
+            <h4>📞 Telefoon</h4>
             <a href="tel:+31622337262">+31 6 223 37 262</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="contact-content">
+    <div class="container">
+      <h2>Laten we in gesprek gaan</h2>
+      <p class="contact-subtitle">Vul het formulier in en ik neem binnen 24 uur contact met u op</p>
+
+      <div class="contact-grid">
         <div class="contact-form">
-          <h3>Stuur een bericht</h3>
           <form>
             <div class="form-group">
               <label for="name">Uw naam *</label>
@@ -37,11 +50,34 @@ import LowHero from '../components/LowHero.astro';
               <input type="text" id="organization" name="organization" required />
             </div>
             <div class="form-group">
-              <label for="message">Beschrijf uw uitdaging *</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Wat is uw uitdaging? *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Beschrijf kort wat u wilt bereiken..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary-large">Verstuur</button>
+            <button type="submit" class="btn btn-primary-large">Stuur bericht</button>
           </form>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-block">
+            <h3>Snel bereikbaar</h3>
+            <p>U kunt mij het best bereiken via e-mail of telefoon. Ik reageer altijd zo snel mogelijk.</p>
+            <div class="contact-details">
+              <div class="detail-item">
+                <strong>E-mail</strong>
+                <a href="mailto:info@sabinnovation.nl">info@sabinnovation.nl</a>
+              </div>
+              <div class="detail-item">
+                <strong>Telefoon</strong>
+                <a href="tel:+31622337262">+31 6 223 37 262</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <h3>Over deze samenwerking</h3>
+            <p>Bij het eerste contact bespreken we uw situatie, uitdaging en wat u wilt bereiken. Daar kan ik het beste op inhakken.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Geen verplichtingen. Geen verborgen kosten. Gewoon eerlijk overleg.</p>
+          </div>
         </div>
       </div>
     </div>

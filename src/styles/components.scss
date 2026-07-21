@@ -8,6 +8,43 @@
   text-align: center;
   border-bottom: 1px solid rgba(21, 51, 102, 0.1);
 
+  .breadcrumbs {
+    margin-bottom: 1.5rem;
+
+    ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: $text-light;
+    }
+
+    a {
+      color: $accent;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover {
+        color: $accent-dark;
+        text-decoration: underline;
+      }
+    }
+
+    .separator {
+      color: $text-light;
+    }
+  }
+
   h1 {
     font-size: 2.5rem;
     font-weight: 600;

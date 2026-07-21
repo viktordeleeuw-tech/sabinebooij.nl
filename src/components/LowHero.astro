@@ -1,14 +1,36 @@
 ---
+interface Breadcrumb {
+  label: string;
+  href?: string;
+}
+
 interface Props {
   title: string;
   subtitle?: string;
+  breadcrumbs?: Breadcrumb[];
 }
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, breadcrumbs } = Astro.props;
 ---
 
 <section class="low-hero">
   <div class="container">
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          {breadcrumbs.map((crumb, idx) => (
+            <li>
+              {crumb.href ? (
+                <a href={crumb.href}>{crumb.label}</a>
+              ) : (
+                <span>{crumb.label}</span>
+              )}
+              {idx < breadcrumbs.length - 1 && <span class="separator">/</span>}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
     <h1>{title}</h1>
     {subtitle && <p class="subtitle">{subtitle}</p>}
   </div>
